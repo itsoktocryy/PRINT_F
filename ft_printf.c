@@ -1,5 +1,11 @@
 #include "ft_printf.h"
 
+static int	ft_putchar_fddd(char c, int fd)
+{
+	write(fd, &c, 1);
+	return(c);
+}
+
 static char ft_check_flag(char str)
 {
     if (str == 'c' || str == 's' || str == 'd'
@@ -45,16 +51,26 @@ int	ft_printf(const char *str, ...)
 		{
 			if (!ft_check_flag(str[i + 1]))
 				return (0);
-			len += ft_print_flag(str[i + 1], ptr);
+			len += ft_print_flag(str[i + 1], ap);
 			i++;
 		}
 		else
 		{
-			len += ft_putchar_fd(str[i], 1);
+			len += ft_putchar_fddd(str[i], 1);
 			len++;
 			i++;
 		}
 	}
 	va_end(ap);
 	return (len);
+}
+
+#include <stdio.h>
+int main()
+{
+	char s1[] = "itsoktocryy";
+	printf("%s\n",s1);
+	ft_printf(s1);
+	//char res1 = ft_printf("itsoktocryy\n\n");
+	//char res2 = printf("itsoktocryy\n\n");
 }

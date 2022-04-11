@@ -1,5 +1,15 @@
 #include "ft_printf.h"
 
+static size_t	ft_strlen(const char *s)
+{
+	size_t	x;
+
+	x = 0;
+	while (s[x] != '\0')
+		x++;
+	return (x);
+}
+
 static int	ft_size(unsigned int nb)
 {
 	int	size;
@@ -24,7 +34,7 @@ static char	*ft_utoa(unsigned int n)
 	char	*str;
 
 	size = ft_size(n);
-	str = malloc(sizeof(char), size + 1);
+	str = malloc(sizeof(char) * size + 1);
 	if (str == NULL)
 		return (0);
 	while (n != 0)
