@@ -9,8 +9,8 @@ static int	ft_putchar_fddd(char c, int fd)
 static char ft_check_flag(char str)
 {
     if (str == 'c' || str == 's' || str == 'd'
-        || str == 'i' || str == 'u' || /*str =='p'
-        || str == 'x' || str == 'X' ||*/ str == '%')
+        || str == 'i' || str == 'u' || str =='p'/*
+        || str == 'x' || str == 'X' */|| str == '%')
         return (1);
     else
         return (0);
@@ -28,10 +28,10 @@ static int  ft_print_flag(char str, va_list ap)
     else if (str == 'u')
         len = ft_print_uint(va_arg(ap, unsigned int));
     /*else if (str == 'x' || str == 'X')
-        len = ft_print_hexa(va_arg(ap, unsigned int));
+        len = ft_print_hexa(va_arg(ap, unsigned int));*/
     else if (str == 'p')
         len = ft_print_void(va_arg(ap, unsigned long long));
-    else if (str == '%')*/
+    else if (str == '%')
 	    write(1, "%", 1);
 	return (len);
 }
