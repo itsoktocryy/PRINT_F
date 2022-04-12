@@ -1,9 +1,4 @@
-#include "printf.h"
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
-
+#include "ft_printf.h"
 
 static size_t	ft_strlen(const char *s)
 {
