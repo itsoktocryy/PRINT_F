@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int	ft_putchar_fddd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 	return(c);
@@ -9,8 +9,8 @@ static int	ft_putchar_fddd(char c, int fd)
 static char ft_check_flag(char str)
 {
     if (str == 'c' || str == 's' || str == 'd'
-        || str == 'i' || str == 'u' || str =='p'/*
-        || str == 'x' || str == 'X' */|| str == '%')
+        || str == 'i' || str == 'u' /*|| str =='p'*/
+        || str == 'x' || str == 'X' || str == '%')
         return (1);
     else
         return (0);
@@ -27,10 +27,10 @@ static int  ft_print_flag(char str, va_list ap)
         len = ft_print_int(va_arg(ap, int));
     else if (str == 'u')
         len = ft_print_uint(va_arg(ap, unsigned int));
-    /*else if (str == 'x' || str == 'X')
-        len = ft_print_hexa(va_arg(ap, unsigned int));*/
-    else if (str == 'p')
-        len = ft_print_void(va_arg(ap, unsigned long long));
+    else if (str == 'x' || str == 'X')
+        len = ft_print_hexa(va_arg(ap, unsigned int), str);
+    //else if (str == 'p')
+    //    len = ft_print_void(va_arg(ap, unsigned long long));
     else if (str == '%')
 	    write(1, "%", 1);
 	return (len);
@@ -52,11 +52,11 @@ int	ft_printf(const char *str, ...)
 			if (!ft_check_flag(str[i + 1]))
 				return (0);
 			len += ft_print_flag(str[i + 1], ap);
-			i++;
+			i += 2;
 		}
 		else
 		{
-			len += ft_putchar_fddd(str[i], 1);
+			len += ft_putchar_fd(str[i], 1);
 			len++;
 			i++;
 		}
@@ -68,9 +68,9 @@ int	ft_printf(const char *str, ...)
 #include <stdio.h>
 int main()
 {
-	char s1[] = "itsoktocryy";
-	printf("%s\n",s1);
-	ft_printf(s1);
+	int s1 = 1312;
+	//printf("%s\n",s1);
+	ft_printf("%X",s1);
 	//char res1 = ft_printf("itsoktocryy\n\n");
 	//char res2 = printf("itsoktocryy\n\n");
 }
