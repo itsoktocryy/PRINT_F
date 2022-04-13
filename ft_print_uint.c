@@ -4,7 +4,7 @@ static int	ft_size(unsigned int nb)
 {
 	int	size;
 
-	size = 1;
+	size = 0;
 	if (nb < 0)
 	{
 		nb *= -1;
