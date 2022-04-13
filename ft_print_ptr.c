@@ -19,8 +19,8 @@ void ft_put_ptr(unsigned long long nbr)
 {
 	if (nbr >= 16)
 	{
-		ft_print_ptr(nbr / 16);
-		ft_print_ptr(nbr % 16);
+		ft_put_ptr(nbr / 16);
+		ft_put_ptr(nbr % 16);
 	}
 	else
 	{
