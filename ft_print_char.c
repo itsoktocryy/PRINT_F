@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-int	ft_print_char(char *str, char format)
+int	ft_print_char(char *str, const char format)
 {
 	if (format == 'c')
 	{
