@@ -63,7 +63,7 @@ int	ft_printf(const char *str, ...)
 int main()
 {
 	char e1[] = "1312";
-	char e2[] = "Daddyimstuck";
+	char *e2 = NULL; //= Daddyimstuck;
 	char e3 = '$';
 	unsigned int e4 = 99999999;
 	int e5 = 1312;
