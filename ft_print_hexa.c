@@ -1,17 +1,17 @@
 #include "ft_printf.h"
 
-static int ft_len(unsigned int nbr)
-{
-    int len;
+// static int ft_len(unsigned int nbr)
+// {
+//     int len;
 
-    len = 0;
-    while (nbr != 0)
-    {
-        nbr = nbr / 16;
-        len++;
-    }
-    return (len);
-}
+//     len = 0;
+//     while (nbr != 0)
+//     {
+//         nbr = nbr / 16;
+//         len++;
+//     }
+//     return (len);
+// }
 
 static void ft_put_hexa(unsigned int nbr, const char format)
 {
@@ -40,5 +40,5 @@ int ft_print_hexa(unsigned int nbr, const char format)
         ft_putchar_fd('0', 1);  //write(1, "0", 1);
     else
         ft_put_hexa(nbr, format);
-    return (ft_len(nbr));
+    return (ft_hexa_len(nbr));
 }

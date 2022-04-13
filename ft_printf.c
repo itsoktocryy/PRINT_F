@@ -1,11 +1,5 @@
 #include "ft_printf.h"
 
-int	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-	return(c);
-}
-
 static char ft_check_flag(char str)
 {
     if (str == 'c' || str == 's' || str == 'd'
@@ -30,7 +24,7 @@ static int  ft_print_flag(char str, va_list ap)
     else if (str == 'x' || str == 'X')
         len = ft_print_hexa(va_arg(ap, unsigned int), str);
     else if (str == 'p')
-        len = ft_print_ptr(va_arg(ap, unsigned long long));
+        len = ft_print_adr(va_arg(ap, unsigned long long));
     else if (str == '%')
 	    write(1, "%", 1);
 	return (len);

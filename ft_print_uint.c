@@ -1,15 +1,5 @@
 #include "ft_printf.h"
 
-static size_t	ft_strlen(const char *s)
-{
-	size_t	x;
-
-	x = 0;
-	while (s[x] != '\0')
-		x++;
-	return (x);
-}
-
 static int	ft_size(unsigned int nb)
 {
 	int	size;
