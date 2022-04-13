@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
-int	ft_print_char(char *str, char c)
+int	ft_print_char(char *str, char format)
 {
-	if (c == 'c')
+	if (format == 'c')
 	{
 		write (1, &str, 1);
 		return (1);

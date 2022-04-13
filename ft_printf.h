@@ -8,7 +8,7 @@
 
 int	    ft_printf(const char *str, ...);
 
-int	    ft_print_char(char *str, char c);
+int	    ft_print_char(char *str, char fomrat);
 int	    ft_print_int(int nbr);
 int	    ft_print_uint(unsigned int nbr);
 int     ft_print_hexa(unsigned int nbr, const char format);
