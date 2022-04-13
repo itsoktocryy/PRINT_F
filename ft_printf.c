@@ -68,22 +68,32 @@ int	ft_printf(const char *str, ...)
 #include <stdio.h>
 int main()
 {
-	char s1[] = "1312";
-	printf("%p\n\n", &s1);
-	ft_printf("%p", &s1);
-	// ft_printf("%x\n", s1);
-	// ft_printf("%X\n",s1);
-	// ft_printf("%d\n", s1);
-	// ft_printf("%i\n", s1);
-	// char s2[] = "Daddyimstuck";
-	// ft_printf("%s\n", s2);
-	// char s3 = '$';
-	// ft_printf("%c\n", s3);
-	// unsigned int s4 = 99999999;
-	// ft_printf("%u\n", s4);
-	
-	 
+	char e1[] = "1312";
+	char e2[] = "Daddyimstuck";
+	char e3 = '$';
+	unsigned int e4 = 99999999;
+	int e5 = 1312;
+	int e6 = 13121312;
 
-	//char res1 = ft_printf("itsoktocryy\n\n");
-	//char res2 = printf("itsoktocryy\n\n");
+	ft_printf("ft_printf : Mem address is %p\n", &e1);
+	printf("printf : Mem address is %p\n\n", &e1);
+
+	ft_printf("ft_printf : String is %s\n", e2);
+	printf("printf : String is %s\n\n", e2);
+
+	ft_printf("ft_printf : Character is %c\n", e3);
+	printf("printf : Character is %c\n\n", e3);
+		
+	ft_printf("ft_printf : Number is %u\n", e4);
+	printf("printf : Number is %u\n\n", e4);
+
+	ft_printf("ft_printf : Number %d\n", e5);
+	printf("printf : Number %d\n\n", e5);
+
+	ft_printf("ft_printf : Number %i\n", e5);
+	printf("printf : Number %i\n\n", e5);
+
+	ft_printf("ft_printf : Hexadecimal convertion is %x\n", e6);
+	printf("printf : Hexadecimal convertion is %x\n", e6);
+	ft_printf("ft_printf : Hexadecimal convertion is %X\n\n",e6);
 }

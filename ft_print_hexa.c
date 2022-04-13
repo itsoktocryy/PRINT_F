@@ -37,7 +37,7 @@ static void ft_put_hexa(unsigned int nbr, const char format)
 int ft_print_hexa(unsigned int nbr, const char format)
 {
     if (nbr == 0)
-        write(1, "0", 1);
+        ft_putchar_fd('0', 1);  //write(1, "0", 1);
     else
         ft_put_hexa(nbr, format);
     return (ft_len(nbr));
