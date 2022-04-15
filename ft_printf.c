@@ -35,8 +35,8 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		len;
 	va_list	ap;
-
 	va_start(ap, str);
+	
 	i = 0;
 	len = 0;
 	while (str[i])
@@ -81,8 +81,8 @@ int main()
 	ft_printf("ft_printf : Number is %u\n", e4);
 	printf("printf : Number is %u\n\n", e4);
 
-	ft_printf("ft_printf : Number %d\n", e5);
-	printf("printf : Number %d\n\n", e5);
+	ft_printf("ft_printf : Number %08d\n", e5);
+	printf("printf : Number %08d\n\n", e5);
 
 	ft_printf("ft_printf : Number %i\n", e5);
 	printf("printf : Number %i\n\n", e5);
@@ -91,3 +91,10 @@ int main()
 	printf("printf : Hexadecimal convertion is %x\n", e6);
 	ft_printf("ft_printf : Hexadecimal convertion is %X\n\n",e6);
 }
+
+		// else if (str[i + 1] >= 48 && str[i + 1] <= 57)
+		// {
+		// 	len += ft_putchar_fd('0', 1);
+		// 	len++;
+		// 	i++;
+		// }
